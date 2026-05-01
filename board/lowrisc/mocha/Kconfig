@@ -19,5 +19,7 @@ config TEXT_BASE
 config BOARD_SPECIFIC_OPTIONS
 	def_bool y
 	select GENERIC_RISCV
+	imply SERIAL
+	imply LOWRISC_OPENTITAN_UART
 
 endif

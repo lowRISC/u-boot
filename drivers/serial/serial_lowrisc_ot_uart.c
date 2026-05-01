@@ -1,5 +1,7 @@
-// SPDX-License-Identifier: GPL-2.0+
+// SPDX-License-Identifier: Apache-2.0
 /*
+ * lowRISC Opentitan UART driver
+ *
  * Copyright (C) 2026 lowRISC Contributors.
  * Author: Alice Ziuziakowska <a.ziuziakowska@lowrisc.org>
  */
