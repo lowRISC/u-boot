@@ -508,6 +508,12 @@ config SIFIVE_GPIO
 	  Device model driver for GPIO controller present in SiFive FU540 SoC. This
 	  driver enables GPIO interface on HiFive Unleashed A00 board.
 
+config LOWRISC_OPENTITAN_GPIO
+	bool "lowRISC Opentitan GPIO driver"
+	depends on DM_GPIO
+	help
+	  This driver supports the lowRISC Opentitan GPIO controller.
+
 config MVEBU_GPIO
 	bool "Marvell MVEBU GPIO driver"
 	depends on DM_GPIO && (ARCH_MVEBU || ARCH_KIRKWOOD)
