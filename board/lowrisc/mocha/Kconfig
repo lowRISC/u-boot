@@ -20,6 +20,8 @@ config BOARD_SPECIFIC_OPTIONS
 	def_bool y
 	select GENERIC_RISCV
 	imply SERIAL
+	imply GPIO
 	imply LOWRISC_OPENTITAN_UART
+	imply LOWRISC_OPENTITAN_GPIO
 
 endif
