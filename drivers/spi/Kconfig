@@ -524,6 +524,11 @@ config SPI_SIFIVE
 
 	  The SiFive SPI controller driver is found on various SiFive SoCs.
 
+config LOWRISC_OPENTITAN_SPI_HOST
+	bool "lowRISC Opentitan SPI Host driver"
+	help
+	  This driver supports the lowRISC Opentitan SPI Host.
+
 config SOFT_SPI
 	bool "Soft SPI driver"
 	help
