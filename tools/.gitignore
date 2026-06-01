@@ -40,3 +40,4 @@
 /version.h
 /xway-swap-bytes
 /boot
+/prerelocs-riscv-cheri
