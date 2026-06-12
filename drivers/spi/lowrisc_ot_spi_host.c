@@ -107,6 +107,13 @@ static void lowrisc_ot_spi_host_xfer_part(volatile struct lowrisc_ot_spi_host *r
 	if (hold_cs)
 		command |= LOWRISC_OT_SPI_COMMAND_CSAAT;
 
+	do {
+		status = readl(&regs->status);
+		ready = !!(status & LOWRISC_OT_SPI_STATUS_READY);
+	} while (!ready);
+
+	writel(command, &regs->command);
+
 	for (unsigned int n = 0; n < n_words; n++) {
 		tx = UINT32_MAX;
 		if (tx_ptr) {
@@ -140,13 +147,6 @@ static void lowrisc_ot_spi_host_xfer_part(volatile struct lowrisc_ot_spi_host *r
 		}
 		writel(tx, &regs->txdata);
 	}
-
-	do {
-		status = readl(&regs->status);
-		ready = !!(status & LOWRISC_OT_SPI_STATUS_READY);
-	} while (!ready);
-
-	writel(command, &regs->command);
 
 	do {
 		status = readl(&regs->status);
