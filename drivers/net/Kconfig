@@ -527,6 +527,12 @@ config LITEETH
 	help
 	 Driver for the LiteEth Ethernet MAC from LiteX.
 
+config LOWRISC_ETH
+	bool "lowRISC Ethernet Controller"
+	depends on DM_ETH
+	help
+	  This drivers supports the lowRISC Ethernet Controller.
+
 config MV88E6XXX
 	bool "Marvell MV88E6xxx Ethernet switch DSA driver"
 	depends on DM_DSA && DM_MDIO
